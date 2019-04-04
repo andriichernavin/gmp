@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Protocol>
+  <Company Code="1" Name="Радмиртех">
+    <Block Code="1" Size="64" Name="Суточный блок" Table="daily_reports">
+      <Value Parameter="Serial" Field="serNUM" Name="Серийный номер устройства"/>
+      <Value Parameter="Company" Field="mfDEV" Name="Производитель устройства"/>
+      <Value Parameter="Device" Field="typeDEV" Name="Тип устройства"/>
+      <Value Parameter="Channel" Field="chNUM" Name="Номер канала"/>
+      <Value Offset="1" Size="4" Type="datetime" Field="dt" Name="Дата составления отчета"/>
+      <Value Offset="5" Size="4" Type="float" Field="dVwrk" Name="Объем в рабочих условиях"/>
+      <Value Offset="9" Size="4" Type="float" Field="dVst" Name="Объем в стандартных условиях"/>
+      <Value Offset="13" Size="4" Type="float" Field="dValwrk" Name="Объем аварийный в рабочих условиях"/>
+      <Value Offset="17" Size="4" Type="float" Field="dValst" Name="Объем аварийный в стандартных условиях"/>
+      <Value Offset="21" Size="4" Type="float" Field="dVwrk_alwrk" Name="Суммарный объем в рабочих условиях"/>
+      <Value Offset="25" Size="4" Type="float" Field="dVst_alwrk" Name="Суммарный объем в стандартных условиях"/>
+      <Value Offset="29" Size="4" Type="float" Field="dVmeter" Name="Показания счетчика" Flag="61,16,0;"/>
+      <Value Offset="29" Size="4" Type="uint" Field="dVmeter" Name="Показания счетчика" Flag="61,16,16;"/>
+      <Value Offset="33" Size="4" Type="float" Field="press" Name="Среднесуточные значения абсолютного давления газа"/>
+      <Value Offset="37" Size="4" Type="float" Field="temper" Name="Среднесуточные значения температуры газа"/>
+      <!--<Value Offset="41" Size="4" Type="float" Field="" Name="Коэф. сжимаемости"/>-->
+      <Value Offset="45" Size="4" Type="float" Field="kkorr" Name="Коэффициент коррекции"/>
+      <Value Offset="49" Size="10" Type="char" Field="reserved" Name="Резерв"/>
+      <Value Offset="59" Size="2" Type="uint" Field="dNumWrCor" Name="Номер записи в суточном архиве корректора"/>
+      <Value Offset="61" Size="1" Type="uint" Field="dfKgMPadFlag" Name="Флаги"/>
+    </Block>
+    <Block Code="2" Size="64" Name="Часовой блок" Table="hourly_reports">
+      <Value Parameter="Serial" Field="serNUM" Name="Серийный номер устройства"/>
+      <Value Parameter="Company" Field="mfDEV" Name="Производитель устройства"/>
+      <Value Parameter="Device" Field="typeDEV" Name="Тип устройства"/>
+      <Value Parameter="Channel" Field="chNUM" Name="Номер канала"/>
+      <Value Offset="1" Size="4" Type="datetime" Field="dt" Name="Дата составления отчета"/>
+      <Value Offset="5" Size="4" Type="float" Field="hVwrk" Name="Объем в рабочих условиях"/>
+      <Value Offset="9" Size="4" Type="float" Field="hVst" Name="Объем в стандартных условиях"/>
+      <Value Offset="13" Size="4" Type="float" Field="hValwrk" Name="Объем аварийный в рабочих условиях"/>
+      <Value Offset="17" Size="4" Type="float" Field="hValst" Name="Объем аварийный в стандартных условиях"/>
+      <Value Offset="21" Size="4" Type="float" Field="hVwrk_alwrk" Name="Суммарный объем в рабочих условиях"/>
+      <Value Offset="25" Size="4" Type="float" Field="hVst_alwrk" Name="Суммарный объем в стандартных условиях"/>
+      <Value Offset="29" Size="4" Type="float" Field="hVmeter" Name="Показания счетчика" Flag="61,16,0;"/>
+      <Value Offset="29" Size="4" Type="uint" Field="hVmeter" Name="Показания счетчика" Flag="61,16,16;"/>
+      <Value Offset="33" Size="4" Type="float" Field="press" Name="Среднесуточные значения абсолютного давления газа"/>
+      <Value Offset="37" Size="4" Type="float" Field="temper" Name="Среднесуточные значения температуры газа"/>
+      <!--<Value Offset="41" Size="4" Type="float" Field="" Name="Коэф. сжимаемости"/>-->
+      <Value Offset="45" Size="4" Type="float" Field="kkorr" Name="Коэффициент коррекции"/>
+      <Value Offset="49" Size="10" Type="char" Field="reserved" Name="Резерв"/>
+      <Value Offset="59" Size="2" Type="uint" Field="hNumWrCor" Name="Номер записи в суточном архиве корректора"/>
+      <Value Offset="61" Size="1" Type="uint" Field="hfKgMPahFlag" Name="Флаги"/>
+    </Block>
+    <Receipt Code="0" Size="0" Name="Сценарий прочитать"/>
+    <Receipt Code="1" Size="476" Name="Сценарий записать" Table="script_requests">
+      <Value Offset="0" Size="1" Type="uint" Field="NumSim" Name="?"/>
+      <Value Offset="1" Size="1" Type="uint" Field="EnabSim" Name="?"/>
+      <Value Offset="2" Size="1" Type="uint" Field="EnabDoubSim" Name="?"/>
+      <Value Offset="3" Size="1" Type="uint" Field="EnServSim" Name="?"/>
+      <Value Offset="4" Size="1" Type="uint" Field="SetTmServSim" Name="?"/>
+      <Value Offset="5" Size="1" Type="uint" Field="EnEmailSim" Name="?"/>
+      <Value Offset="6" Size="1" Type="uint" Field="SetTmEmailSim" Name="?"/>
+      <Value Offset="7" Size="16" Type="char" Field="ContypeSim" Name="?"/>
+      <Value Offset="23" Size="32" Type="char" Field="APNSim" Name="?"/>
+      <Value Offset="55" Size="16" Type="char" Field="USERSim" Name="?"/>
+      <Value Offset="71" Size="16" Type="char" Field="PWDSim" Name="?"/>
+      <Value Offset="87" Size="32" Type="char" Field="IPadrSim" Name="?"/>
+      <Value Offset="119" Size="5" Type="char" Field="PortSim" Name="?"/>
+      <Value Offset="124" Size="32" Type="char" Field="SMTPSIM" Name="?"/>
+      <Value Offset="156" Size="32" Type="char" Field="NameSim" Name="?"/>
+      <Value Offset="188" Size="16" Type="char" Field="PassSim" Name="?"/>
+      <Value Offset="204" Size="32" Type="char" Field="FromSim" Name="?"/>
+      <Value Offset="236" Size="16" Type="char" Field="FrNaSim" Name="?"/>
+      <Value Offset="252" Size="32" Type="char" Field="RecipSim" Name="?"/>
+      <Value Offset="284" Size="16" Type="char" Field="RecNaSim" Name="?"/>
+      <Value Offset="300" Size="32" Type="char" Field="CopySim" Name="?"/>
+      <Value Offset="332" Size="16" Type="char" Field="CopyNaSim" Name="?"/>
+      <Value Offset="348" Size="32" Type="char" Field="TopicSim" Name="?"/>
+      <Value Offset="380" Size="96" Type="char" Field="TMSIM" Name="?"/>
+    </Receipt>
+    <Receipt Code="2" Size="1" Name="Смещение времени отновительно Гринвича в часах">
+      <Value Offset="0" Size="1" Type="int" Parameter="0" Base="10" Name="?"/>
+    </Receipt>
+    <Receipt Code="3" Size="3" Name="Запрос данных за закрытые сутки">
+      <Value Offset="0" Size="3" Type="date" Parameter="0" Name="?"/>
+    </Receipt>
+    <Receipt Code="4" Size="0" Name="Запрос данных за незакрытые сутки"/>
+    <Receipt Code="5" Size="0" Name="Запрос программируемых параметров"/>
+    <Receipt Code="6" Size="17" Name="Запись параметров газа">
+      <Value Offset="0" Size="1" Type="uint" Base="10" Parameter="1" Name="?"/>
+      <Value Offset="1" Size="4" Type="char" Parameter="2" Name="?"/>
+      <Value Offset="5" Size="4" Type="float" Base="10" Parameter="3" Name="?"/>
+      <Value Offset="9" Size="4" Type="float" Base="10" Parameter="4" Name="?"/>
+      <Value Offset="13" Size="4" Type="float" Base="10" Parameter="5" Name="?"/>
+    </Receipt>
+    <Receipt Code="9" Size="0" Name="Рестарт iMod"/>
+    <Receipt Code="10" Size="0" Name="Верификация базы iMod"/>
+    <Receipt Code="18" Size="8" Name="Запись маски для аварий">
+      <Value Offset="0" Size="8" Type="int" Base="16" Parameter="0" Name="?"/>
+    </Receipt>
+    <Receipt Code="19" Size="0" Name="Запрос телеметрии"/>
+  </Company>
+  <Company Code="2" Name="Слот"/>
+  <Company Code="3" Name="Грэмпис"/>
+  <Company Code="5" Name="Укргазтех"/>
+</Protocol>
